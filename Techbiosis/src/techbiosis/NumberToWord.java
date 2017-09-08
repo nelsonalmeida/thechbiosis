@@ -5,6 +5,11 @@
  */
 package techbiosis;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import static java.lang.Integer.parseInt;
+
 /**
  *
  * @author nelsonalmeida
@@ -123,11 +128,21 @@ public class NumberToWord {
         return current;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         NumberToWord ntw = new NumberToWord();
+        
+        System.out.println("TESTES:");
         System.out.println("542: " + ntw.convert(542));
         System.out.println("23212: " + ntw.convert(23212));
         System.out.println("1049875: " + ntw.convert(1049875));
+        
+        System.out.println("Agora digite um numero: ");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String input = in.readLine();
+        
+        int num = parseInt(input);
+        
+        System.out.println(num + ": " + ntw.convert(num));
 
     }
 }
